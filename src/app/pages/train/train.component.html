@@ -1,0 +1,195 @@
+<div class="content">
+  <h3 nz-typography>Add a utterance</h3>
+  <p nz-typography>Create an intent and add multiple utternaces to let Instinct Al answers automatically.</p>
+  <button nz-typography nz-button (click)="addIntentModalVisible = !addIntentModalVisible">
+    <i nz-icon nzType="plus" nzTheme="outline"></i>
+    Add Intent
+  </button>
+
+  <div class="insight-header">
+    <div class="title">
+      <h4 nz-typography>Insights</h4>
+      <button nz-typography nz-button>
+        <i nz-icon nzType="clear" nzTheme="outline"></i>
+        Clear all
+      </button>
+    </div>
+
+    <div class="sort">
+      <p nz-typography>Sort By:</p>
+      <button nz-typography nz-button nzTrigger="click" nz-dropdown [nzOverlayClassName]="'sort-menu'" [nzDropdownMenu]="sortMenu">
+        Priority
+        <i nz-icon nzType="down" nzTheme="outline"></i>
+      </button>
+    </div>
+
+    <nz-dropdown-menu #sortMenu="nzDropdownMenu">
+      <ul nz-menu>
+        <li nz-menu-item>Priority</li>
+        <li nz-menu-item>Unanswered</li>
+        <li nz-menu-item>Improve Coverage</li>
+        <li nz-menu-item>Under Performing</li>
+      </ul>
+    </nz-dropdown-menu>
+  </div>
+
+  <div class="insight-list">
+    <div class="insight-box">
+      <div class="actions">
+        <span nz-typography class="red">Unanswered</span>
+        <button nz-typography nz-button>Map to existing reply</button>
+      </div>
+      <div class="title">
+        <h4 nz-typography>Do you deal in real state</h4>
+        <button nz-typography nz-button>Add reply</button>
+      </div>
+      <div class="description">
+        <p nz-typography>Asked 32 times a week</p>
+        <button nz-typography nz-button>
+          <i nz-icon nzType="calendar" nzTheme="outline"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="insight-box" (click)="viewIntentModalVisible = !viewIntentModalVisible">
+      <div class="actions">
+        <span nz-typography class="yellow">Improve coverage</span>
+        <button nz-typography nz-button>Map to existing reply</button>
+      </div>
+      <div class="title">
+        <h4 nz-typography>What time you are open</h4>
+        <button nz-typography nz-button>Add reply</button>
+      </div>
+      <div class="description">
+        <p nz-typography>Found 2 similar utterances</p>
+        <button nz-typography nz-button>
+          <i nz-icon nzType="calendar" nzTheme="outline"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="actions">
+        <span nz-typography class="violet">Underperforming</span>
+        <button nz-typography nz-button>Map to existing reply</button>
+      </div>
+      <div class="title">
+        <h4 nz-typography>Where are you folks located</h4>
+        <button nz-typography nz-button>Add reply</button>
+      </div>
+      <div class="description">
+        <p nz-typography>5 catch all request after reading this</p>
+        <button nz-typography nz-button>
+          <i nz-icon nzType="calendar" nzTheme="outline"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<nz-modal nzWrapClassName="add-intent-modal" [(nzVisible)]="addIntentModalVisible"
+[nzTitle]="null" [nzContent]="addIntentModalContent" [nzFooter]="null" nzClosable="false">
+  <ng-template #addIntentModalContent>
+    <div class="modal-container">
+      <div class="intent-block">
+        <div class="intent-title">
+          <div class="info">
+            <h4 nz-typography>Intent Name</h4>
+            <p nz-typography>Intent represent a task that Instinct Al needs to carry out.</p>
+          </div>
+          <button nz-typography nz-button (click)="addIntentModalVisible = !addIntentModalVisible">Close</button>
+        </div>
+        <input nz-typography nz-input placeholder="I need help" />
+      </div>
+
+      <div class="utterance-block">
+        <h4 nz-typography>Add Utterance</h4>
+        <p nz-typography>Create alteast 5 variations to allow Makerobos's Natural language Understanding (NLU) to automatically match intents with user input. The more utternace you enter, the better chance this intent will be matched.</p>
+        <div class="inputs-block">
+          <input nz-typography nz-input placeholder="Please help me" />
+          <div class="custom-input">
+            <input nz-typography nz-input placeholder="Need Assistance" />
+            <button nz-typography nz-button class="delete-btn">
+              <i nz-icon nzType="delete" nzTheme="outline"></i>
+            </button>
+          </div>
+        </div>
+        <button nz-typography nz-button>
+          <i nz-icon nzType="plus" nzTheme="outline"></i>
+          Add another variation
+        </button>
+      </div>
+
+      <div class="reply-block">
+        <h4 nz-typography>Add reply</h4>
+        <textarea nz-typography rows="4" nz-input></textarea>
+        <button nz-typography nz-button>
+          <i nz-icon nzType="plus" nzTheme="outline"></i>
+          Add random message
+        </button>
+      </div>
+
+      <div class="create-block">
+        <button nz-typography nz-button placeholder="Bot says">
+          Create Intent
+        </button>
+      </div>
+    </div>
+  </ng-template>
+</nz-modal>
+
+
+<nz-modal nzWrapClassName="view-intent-modal" [(nzVisible)]="viewIntentModalVisible"
+[nzTitle]="null" [nzContent]="viewIntentModalContent" [nzFooter]="null" nzClosable="false">
+  <ng-template #viewIntentModalContent>
+    <div class="modal-container">
+      <div class="header">
+        <span nz-typography class="yellow">Improve coverage</span>
+        <button nz-typography nz-button (click)="viewIntentModalVisible = !viewIntentModalVisible">Close</button>
+      </div>
+
+      <div class="title">
+        <i nz-icon nzType="search" nzTheme="outline"></i>
+        <h4 nz-typography>Are you real estate dealer dealing in commercial plots .... </h4>
+      </div>
+
+      <div class="intent-list">
+        <div class="info">
+          <span>Closest match intents (2).</span>
+        </div>
+
+        <div class="intent-block">
+          <div class="intent-box">
+            <div class="intent-items">
+              <ul>
+                <li nz-typography>Real Estate</li>
+              </ul>
+              <span nz-typography class="items">Are you real estate dealer dealing in commercial plots .... </span>
+              <span nz-typography class="items">Are you real estate dealer dealing in commercial plots .... </span>
+              <small nz-typography>Show More</small>
+            </div>
+
+            <div class="add-btn">
+              <button nz-typography nz-button>Add to this intent</button>
+            </div>
+          </div>
+
+          <div class="intent-box">
+            <div class="intent-items">
+              <ul>
+                <li nz-typography>Real Estate</li>
+              </ul>
+              <span nz-typography class="items">Are you real estate dealer dealing in commercial plots .... </span>
+              <small nz-typography>Show More</small>
+            </div>
+
+            <div class="added-btn">
+              <button nz-typography nz-button>Added</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</nz-modal>

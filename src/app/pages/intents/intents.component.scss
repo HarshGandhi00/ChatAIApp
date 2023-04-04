@@ -1,0 +1,130 @@
+::ng-deep {
+  .accordion-container {
+    nz-collapse {
+      border: none !important;
+
+      nz-collapse-panel {
+        border: none !important;
+        margin-bottom: 12px;
+
+        .ant-collapse-header {
+          border: 1px solid #9e9e9e !important;
+          padding: 4px 8px !important;
+          font-weight: 700;
+          background: transparent !important;
+        }
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .edit-menu {
+    .ant-dropdown-menu {
+      li {
+        color: #1e1e1e;
+        font-weight: 600;
+        padding: 6px 16px;
+      }
+    }
+  }
+}
+
+:host {
+  position: relative;
+}
+
+.content {
+  display: block;
+  max-width: 80%;
+
+  h3 {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  p {
+    color: #a5a5a5;
+    font-weight: 700;
+  }
+
+  .intent-box {
+    padding: 16px;
+    border: 1px solid #9e9e9e;
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .custom-input {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        .search-icon {
+          position: absolute;
+          left: 16px;
+        }
+
+        input {
+          border: 2px solid #9e9e9e;
+          font-weight: 600;
+          padding-left: 36px;
+        }
+      }
+
+      .add-btn {
+        button {
+          i {
+            padding-right: 4px;
+          }
+
+          background: #00826b;
+          border: none;
+          padding: 4px 8px;
+          color: #d6eae6;
+        }
+      }
+    }
+
+    .title {
+      margin: 16px -16px;
+      padding: 16px;
+      background: #dcf9f5;
+      border-top: 1px solid #9e9e9e;
+      border-bottom: 1px solid #9e9e9e;
+
+      span {
+        font-size: 14px;
+        font-weight: 800;
+      }
+    }
+
+    .accordion-container {
+      p {
+        color: #141414;
+        font-weight: 700;
+
+        :last-child {
+          margin: 0;
+        }
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        background: #f2f2f2;
+        margin: 8px 0;
+        color: #515151;
+        border: none;
+        font-size: 12px;
+        padding: 4px 8px;
+        font-weight: 700;
+      }
+    }
+  }
+}

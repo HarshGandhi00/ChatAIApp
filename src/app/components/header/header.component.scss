@@ -1,0 +1,98 @@
+::ng-deep {
+  .contact-menu {
+    .ant-dropdown-menu {
+      li {
+        color: #1e1e1e;
+        font-weight: 600;
+        padding: 6px 16px;
+
+        a {
+          color: #1e1e1e;
+        }
+      }
+    }
+  }
+
+  .action-buttons {
+    i {
+      svg {
+        height: 18px;
+        width: 18px;
+      }
+    }
+  }
+}
+
+:host {
+  z-index: 1111;
+}
+
+nz-header {
+  padding: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.app-header {
+  position: relative;
+  height: 64px;
+  padding: 12px 24px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,130,107,0.8);
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .info-block {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .brand-block {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      h2 {
+        margin: 0;
+        font-weight: 700;
+      }
+    }
+
+    p {
+      margin: 0;
+      line-height: 1;
+      color: #9e9e9e;
+      font-weight: 500;
+    }
+  }
+
+  .contact-block {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    .contact-dropdown {
+      display: flex;
+      align-items: center;
+
+      button {
+        background: transparent;
+        color: #565656;
+        font-weight: 500;
+        border: 1px solid #aeaeae;
+
+        i {
+          padding: 0 4px;
+        }
+      }
+    }
+
+    .action-buttons {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+  }
+}

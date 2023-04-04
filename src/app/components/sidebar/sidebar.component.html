@@ -1,0 +1,19 @@
+<nz-sider class="menu-sidebar" nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+  <div class="sidebar-logo">
+    <i nz-icon nzType="menu" nzTheme="outline" (click)="isCollapsed = !isCollapsed"></i>
+  </div>
+  <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isInlineCollapsed" class="main-menu">
+    <li nz-submenu nzOpen nzTitle="Message" nzIcon="message"> </li>
+    <li nz-submenu nzOpen nzTitle="Users" nzIcon="team"> </li>
+    <li nz-submenu nzOpen nzTitle="Apps" nzIcon="appstore"> </li>
+    <li nz-submenu nzOpen nzTitle="Explore" nzIcon="global"> </li>
+    <li nz-submenu nzOpen nzTitle="News" nzIcon="notification"> </li>
+    <li nz-submenu nzOpen nzTitle="Statistics" nzIcon="line-chart"> </li>
+    <li nz-submenu nzOpen nzTitle="QR" nzIcon="scan"> </li>
+  </ul>
+
+  <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed" class="bottom-menu">
+    <li nz-submenu nzOpen nzTitle="Settings" nzIcon="setting"> </li>
+    <li nz-submenu nzOpen nzTitle="Account" nzIcon="user"> </li>
+  </ul>
+</nz-sider>

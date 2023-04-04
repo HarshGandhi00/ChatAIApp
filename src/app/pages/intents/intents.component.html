@@ -1,0 +1,74 @@
+<div class="content">
+  <h3 nz-typography>Intents (10)</h3>
+  <p nz-typography>Browse through existing intents that were created earlier and improve coverage by
+    adding more variations.</p>
+
+  <div class="intent-box">
+    <div class="header">
+      <div class="custom-input">
+        <i nz-icon nzType="search" nzTheme="outline" class="search-icon"></i>
+        <input nz-typography nz-input placeholder="search intent or utterance" />
+      </div>
+      <div class="add-btn">
+        <button nz-typography nz-button>
+          <i nz-icon nzType="plus" nzTheme="outline"></i>
+          Add Intent
+        </button>
+      </div>
+    </div>
+
+    <div class="title">
+      <span>Intent</span>
+    </div>
+
+    <div class="accordion-container">
+      <nz-collapse>
+        <nz-collapse-panel [nzHeader]="'Greetings'" [nzShowArrow]="false" [nzExtra]="editTemplateRef">
+          <ng-container [ngTemplateOutlet]="collapseContentRef"> </ng-container>
+        </nz-collapse-panel>
+
+        <nz-collapse-panel [nzHeader]="'Bye'" [nzShowArrow]="false" [nzExtra]="editTemplateRef">
+          <ng-container [ngTemplateOutlet]="collapseContentRef"> </ng-container>
+        </nz-collapse-panel>
+
+        <nz-collapse-panel [nzHeader]="'Office Hours'" [nzShowArrow]="false" [nzExtra]="editTemplateRef">
+          <ng-container [ngTemplateOutlet]="collapseContentRef"> </ng-container>
+        </nz-collapse-panel>
+
+        <nz-collapse-panel [nzHeader]="'Location'" [nzShowArrow]="false" [nzExtra]="editTemplateRef">
+          <ng-container [ngTemplateOutlet]="collapseContentRef"> </ng-container>
+        </nz-collapse-panel>
+      </nz-collapse>
+
+      <ng-template #editTemplateRef>
+        <i nz-icon nzType="more" nzTheme="outline" nz-button nzTrigger="click" nz-dropdown nzPlacement="bottomRight"
+          [nzOverlayClassName]="'edit-menu'" [nzDropdownMenu]="editMenu" (click)="$event.stopPropagation();"></i>
+
+        <nz-dropdown-menu #editMenu="nzDropdownMenu">
+          <ul nz-menu>
+            <li nz-menu-item>
+              <i nz-icon nzType="edit" nzTheme="outline"></i> Edit
+            </li>
+            <li nz-menu-item>
+              <i nz-icon nzType="copy" nzTheme="outline"></i> Replicate
+            </li>
+            <li nz-menu-item>
+              <i nz-icon nzType="delete" nzTheme="outline"></i> Delete
+            </li>
+          </ul>
+        </nz-dropdown-menu>
+      </ng-template>
+
+      <ng-template #collapseContentRef>
+        <p>Hello There</p>
+        <p>How are you doing?</p>
+        <p>Nice to see you</p>
+        <p>Is there any way we can help you?</p>
+        <button nz-typography nz-button>
+          <i nz-icon nzType="plus" nzTheme="outline"></i>
+          Add another variation
+        </button>
+      </ng-template>
+    </div>
+  </div>
+</div>

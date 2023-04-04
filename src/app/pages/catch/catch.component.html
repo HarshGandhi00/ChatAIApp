@@ -1,0 +1,46 @@
+<div class="content">
+  <h3 nz-typography>Catch All</h3>
+  <p nz-typography>When Instinct Al fails to understand user utternace, you can choose one of the option to manage the
+    bot failure without degrading user experience</p>
+
+  <div class="catch-dropdown">
+    <button nz-typography nz-button nzTrigger="click" nz-dropdown [nzOverlayClassName]="'catch-menu'"
+      [nzDropdownMenu]="catchMenu">
+      Human handoff
+      <i nz-icon nzType="down" nzTheme="outline"></i>
+    </button>
+
+    <nz-dropdown-menu #catchMenu="nzDropdownMenu">
+      <ul nz-menu>
+        <li nz-menu-item>Human handoff</li>
+        <li nz-menu-item>Add reply</li>
+      </ul>
+    </nz-dropdown-menu>
+  </div>
+
+  <div class="reply-block">
+    <h3 nz-typography>Add reply</h3>
+    <textarea nz-typography rows="4" nz-input></textarea>
+    <button nz-typography nz-button>
+      <i nz-icon nzType="plus" nzTheme="outline"></i>
+      Add random message
+    </button>
+  </div>
+
+
+  <div class="human-dropdown">
+    <h3 nz-typography>Human Handoff</h3>
+    <button nz-typography nz-button nzTrigger="click" nz-dropdown [nzOverlayClassName]="'agent-menu'"
+      [nzDropdownMenu]="agentMenu">
+      Assign agent
+      <i nz-icon nzType="down" nzTheme="outline"></i>
+    </button>
+
+    <nz-dropdown-menu #agentMenu="nzDropdownMenu">
+      <ul nz-menu>
+        <li nz-menu-item>Assign agent</li>
+        <li nz-menu-item>Add agent</li>
+      </ul>
+    </nz-dropdown-menu>
+  </div>
+</div>

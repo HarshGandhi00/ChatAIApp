@@ -1,0 +1,53 @@
+::ng-deep {
+  .ant-menu {
+    &.ant-menu-dark{
+      .ant-menu-submenu {
+        .ant-menu.ant-menu-sub {
+          background: #00826b !important;
+        }
+      }
+    }
+  }
+
+  nz-sider {
+    &.ant-layout-sider-collapsed {
+      .sidebar-logo {
+        padding: 0 32px;
+      }
+    }
+  }
+}
+
+:host {
+  z-index: 1111;
+}
+
+.menu-sidebar {
+  display: block;
+  position: relative;
+  z-index: 10;
+  min-height: 100%;
+  box-shadow: 2px 0 6px rgba(0,130,107,0.8);
+  background: #00826b;
+}
+
+.sidebar-logo {
+  color: #fff;
+  position: relative;
+  height: 64px;
+  padding-left: 24px;
+  line-height: 64px;
+  overflow: hidden;
+  background: #00826b;
+  transition: all .3s;
+  border-bottom: 1px solid #fff;
+}
+
+.ant-menu {
+  background: #00826b !important;
+}
+
+.bottom-menu {
+  position: absolute;
+  bottom: 0;
+}

@@ -1,0 +1,37 @@
+<div class="content">
+  <h3 nz-typography>Summary</h3>
+  <p nz-typography>Discover which intents are most regularly queried and gain a deeper understanding into the interest
+    of the users.</p>
+
+  <div class="intent-box">
+    <div class="header">
+      <div class="custom-input">
+        <i nz-icon nzType="search" nzTheme="outline" class="search-icon"></i>
+        <input nz-typography nz-input placeholder="search intent or utterance" />
+      </div>
+    </div>
+
+    <div class="table">
+      <nz-table #table [nzData]="listOfData" [nzShowPagination]="false">
+        <thead>
+          <tr>
+            <th>Intent</th>
+            <th>Messages</th>
+            <th>Importance</th>
+            <th>Accuracy</th>
+            <th>Catch all</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of table.data">
+            <td>{{ data.intent }}</td>
+            <td>{{ data.message }}</td>
+            <td>{{ data.importance }}</td>
+            <td>{{ data.accuracy }}</td>
+            <td>{{ data.catch }}</td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<nz-header>
+  <div class="app-header">
+    <div class="info-block">
+      <div class="brand-block">
+        <img src="/assets/logo.png" alt="Ai" height="24" width="24">
+        <h2 nz-typography>Instinct AI</h2>
+      </div>
+
+      <p> Al engine to analyze chat conversations, detecting user intent, answering queries automatically <br> and handling off-target conversations </p>
+    </div>
+
+    <div class="contact-block">
+      <div class="contact-dropdown">
+        <button nz-typography nz-button nzTrigger="click" nz-dropdown [nzOverlayClassName]="'contact-menu'" [nzDropdownMenu]="contactMenu">
+          <i nz-icon nzType="mobile" nzTheme="outline"></i>
+          +91 6350545458
+          <i nz-icon nzType="down" nzTheme="outline"></i>
+        </button>
+
+        <nz-dropdown-menu #contactMenu="nzDropdownMenu">
+          <ul nz-menu>
+            <li nz-menu-item>
+              <a href="tel:+6350545458">+91 6350545458</a>
+            </li>
+            <li nz-menu-item>
+              <a href="mailto:test@test.com">test@test.com</a>
+            </li>
+          </ul>
+        </nz-dropdown-menu>
+      </div>
+
+      <div class="action-buttons">
+        <i nz-icon nzType="alert" nzTheme="outline"></i>
+        <i nz-icon nzType="poweroff" nzTheme="outline"></i>
+      </div>
+    </div>
+  </div>
+</nz-header>
